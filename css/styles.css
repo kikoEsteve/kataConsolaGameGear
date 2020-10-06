@@ -1,0 +1,571 @@
+/* Importamos la fuente SEGA.ttf desde; 
+https://www.dafont.com/font-comment.php?file=sega */
+@font-face {
+    src: url(/fonts/SEGALOGOFONT400.ttf);
+    font-family: sega;
+}
+
+/* Le damos unos valores generales y/o heredados */
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+/* Le damos valor a html para que todos los elementos hereden la propiedad
+"border-box" en este caso, para evitar valor por defecto "content-box" el cual
+expande el objeto al añadirle padding o border, lo cual no suele ser apropiado */
+/* html {
+    box-sizing: border-box;
+} */
+
+
+.gameGear {
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    height: 128.3vh;
+    width: 100vw;
+    margin: auto;
+    font-family: "Open Sans", sans-serif;
+    background-color: #eee;
+}
+
+.body {
+    display: flex;
+    justify-items: center;
+    height: 27.4em;
+    width: 54.9em;
+    border-radius: 17% 17% 17% 17% / 23em 23em 28em 28em;
+    margin: auto;
+    background-color: #3D3E42;
+    box-shadow: 0 0 2em 2em rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.bodyMask {
+    position: relative;
+    margin-top: -1.8em;
+    margin-left: auto;
+    margin-right: auto;
+    height: 32.38em;
+    width: 48em;
+    border-radius: 30em 30em 30em 30em / 10% 10% 16.6% 16.6%;
+    background-color: #3D3E42;
+    /* box-shadow: 0 0 2em 2em rgba(0, 0, 0, 0.3); */
+    z-index: 0;
+
+}
+
+.bodyGhost {
+    position: absolute;
+    justify-content: center;
+    align-self: center;
+    margin-top: 0.71em;
+    height: 32.38em;
+    width: 41em;
+    border-radius: 30em 30em 30em 30em / 10% 10% 16.6% 16.6%;
+    box-shadow: 0 0 2.5em 2.5em rgba(0, 0, 0, 0.4);
+}
+
+.startButton {
+    position: absolute;
+    background-color: #0B59B0;
+    height: 3em;
+    width: 3em;
+    margin-left: 42.5em;
+    margin-top: 5.8em;
+    border-radius: 0em 0em 50% 50% / 50% 50% 50% 50%;
+    transform: rotate(-70deg);
+    z-index: 0;
+}
+
+.startButtonMask {
+    background-color: #3D3E42;
+    height: 1.7em;
+    width: 3.2em;
+    margin-left: -0.1em;
+    margin-top: -0.1em;
+    transform: rotate(0deg);
+}
+
+.screen.panel {
+    position: relative;
+    box-sizing: border-box;
+    justify-content: center;
+    border: 1em solid gray;
+    height: 18em;
+    width: 23em;
+    margin: auto;
+    margin-top: 3.5em;
+    background-color: #535657;
+}
+
+.screen.panel::after,
+.screen.panel::before {
+    position: absolute;
+    content: "";
+    margin-left: -12.5em;
+    margin-top: -2em;
+    height: 21em;
+    width: 22em;
+    background: rgba(0, 0, 0, 1);
+
+}
+
+.screen.panel::after {
+    left: 86.32%;
+    transform: skew(-20deg, 0);
+    border-radius: 0em 8em 3em 10% / 0em 6em 3em 10em;
+}
+
+.screen.panel::before {
+    right: 26.32%;
+    transform: skew(20deg, 0);
+    border-radius: 8em 0% 10em 3em / 6em 0em 10em 3em;
+}
+
+.mainScreen {
+    box-sizing: border-box;
+    border: 1em solid #6F7276;
+    height: 17em;
+    width: 20em;
+    background-color: #4E5150;
+    position: absolute;
+    margin-top: -18em;
+    margin-left: 14.1em;
+    box-shadow: inset 1px 1px 0.2em #000;
+}
+
+
+.leftArea {
+    display: flex;
+}
+
+.arrows {
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+    margin-top: -11.5em;
+    margin-left: -1em;
+    background-color: black;
+
+}
+
+img {
+    position: absolute;
+    height: 5.5em;
+    margin-left: 7em;
+    margin-top: -17em;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.lightOff {
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    margin-left: 10em;
+    margin-top: -11.5em;
+    border-radius: 50%;
+    background-color: grey;
+}
+
+.lightOn {
+    position: absolute;
+    height: 1em;
+    width: 1em;
+    margin-left: 10em;
+    margin-top: -11.5em;
+    border-radius: 50%;
+    background-color: greenyellow;
+}
+
+.power {
+    font-size: 0.7em;
+    color: whitesmoke;
+    position: absolute;
+    margin-top: -14em;
+    margin-left: 13em;
+}
+
+.rightArea {
+    display: flexbox;
+    margin-left: 37em;
+    margin-top: -21.5em;
+}
+
+.sega {
+    position: absolute;
+    margin-top: -10.5em;
+    margin-left: 24em;
+    font-size: 1.5em;
+    font-family: sega;
+    color: gray;
+}
+
+.logoRight {
+    position: absolute;
+    font-size: 0.6em;
+    color: #007C66;
+    margin-top: -23.5em;
+    margin-left: 59.9em;
+}
+
+.one {
+    height: 3.5em;
+    width: 3.5em;
+    margin-top: 4em;
+    margin-left: 9em;
+    border-radius: 50%;
+    background-color: black;
+    background: -webkit-radial-gradient(top left, rgb(73, 73, 73), #000000);
+    box-shadow: inset 0.05em 0.05em 0.05em 0.05em rgba(131, 131, 131, 0.4);
+
+}
+
+.two {
+    height: 3.5em;
+    width: 3.5em;
+    margin-top: 0em;
+    margin-left: 5em;
+    border-radius: 50%;
+    background-color: black;
+    background: -webkit-radial-gradient(top left, rgb(73, 73, 73), #000000);
+    box-shadow: inset 0.05em 0.05em 0.05em 0.05em rgba(131, 131, 131, 0.4);
+}
+
+.speaker {
+    display: flex;
+    margin-left: -7em;
+    transform: scale(.5);
+
+    /* justify-content: space-evenly; */
+}
+
+.speaker31 {
+    display: block;
+    margin-left: 2em;
+}
+
+.speaker311 {
+    background-color: #3D3E42;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker312 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker313 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker314 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker315 {
+    background-color: #3D3E42;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker51 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker51empty {
+    background-color: #3D3E42;
+    width: 0.6em;
+    height: 0.6em;
+}
+
+.speaker511 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker512 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker513 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker514 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker515 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker52 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker521 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker522 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker523 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker524 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker525 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker53 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker531 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker532 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker533 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker534 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker535 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker54 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker541 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker542 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker543 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker544 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker545 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker55 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker551 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker552 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker553 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker554 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker555 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker56 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker561 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker562 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker563 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker564 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker565 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker32 {
+    display: block;
+    margin-left: 0.6em;
+}
+
+.speaker321 {
+    background-color: #3D3E42;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker322 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker323 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker324 {
+    background-color: black;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.speaker325 {
+    background-color: #3D3E42;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
