@@ -1,7 +1,7 @@
 /* Importamos la fuente SEGA.ttf desde; 
 https://www.dafont.com/font-comment.php?file=sega */
 @font-face {
-    src: url(/fonts/SEGALOGOFONT400.ttf);
+    src: url(../fonts/SEGALOGOFONT400.ttf);
     font-family: sega;
 }
 
